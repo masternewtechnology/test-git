@@ -1,0 +1,6 @@
+git config --global user.name "masternewtechnology"
+git config --global user.email "masternewtechnology@gmail.com"
+git clone "url"
+git add "filenamewithextension"
+git commit -m "description" "filenamewithextension"
+git push -u origin master
