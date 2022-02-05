@@ -1,6 +1,60 @@
 git config --global user.name "masternewtechnology"
 git config --global user.email "masternewtechnology@gmail.com"
 git clone "url"
+git init
+git status
+git reset HEAD readme.txt -> to unstage the git added file
+git log
+git log --patch
+
 git add "filenamewithextension"
 git commit -m "description" "filenamewithextension"
 git push -u origin master
+git checkout -b <branchname>   || To create a new branch
+git checkout master || To switch branch
+git checkout <branch>  || To switch branch
+git branch -d <branchname> || To delete a branch
+git branch -D <branchname> || To force delete
+To merge a brach changes to master brach execute below
+To got master branch git checkout master
+git merge <branch>
+git rebase master
+
+COnfigurations
+--------------
+.gitignore -> to ignore the files in local repo to not commit and push
+<folder>/.gitkeep -> Usually newly added folder wont show in git status and will not present for git add. Adding ,gitkeep file will list the folder in git status and git add .
+
+GITLab configuration with Local Git Repo
+----------------------------------------
+
+Steps
+1) Create a folder in your local machine.
+2) Go to spring.initilizer and create a spring boot application, add dependencies [web and devtools]
+3) Download the spring boot application from spring.initilizer, extract it and copy it in the location that you created
+4) Go To project folder and take git bash and enter below comments.
+5) git init
+6) git add .
+7) git commit -m 'First local commit for spring boot application'
+8) Once the project is commited in local repo. The next step is to push this to GitLab remote repository
+9) To communicate git local and GitLab server we need to authorize this two system. For this we can go with SSH key authentication.
+10) Inside git bash enter below command
+11) ssh-keygen
+12) It will ask for a location to generate the public and private key. Give that location or you can give the default location.
+13) It will ask for a key prhase to encrypt the key. You can skip this or you can give the phrase
+14) It will ask for confirmation and you can give enter.
+15) Now the local git SSH public and private key will be generated in the given location
+16) You can navigate to the public key by giving the below command
+17) cat <location>.pub
+18) Copy the key that shown in the git bash
+19) Login in to GitLab and goto your profile drop down. Click preference. Inside that you will see SSH option and enter the key in that location and save.
+20) Now your local and remote git are configured and authenticated. Now you are ready to pull and push files from remote and local git.
+21) To push your spring boot application from local to remote do the following.
+22) Create a repository in GitLab with the same spring boot application name.
+23) Get the ssh ur of newly create GitLab repo 
+24) In local git bash enter below command
+25 git remote add origin git@gitlab.com:siju.gitlab/gitlab-java-project.git
+26 git push origin master
+27) It will ask for the authentication confirmation give Yes
+28) Now all your local files will be pushed to remote.
+
